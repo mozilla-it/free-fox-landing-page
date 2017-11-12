@@ -640,6 +640,7 @@ a.download-link,
       margin-bottom: 0;
       text-align: left; }
   .free-fox-header .free-fox-video {
+    position: relative;
     display: block;
     float: right;
     margin-right: 5%;
@@ -648,6 +649,32 @@ a.download-link,
     .free-fox-header .free-fox-video iframe {
       width: 400px;
       height: 225px; }
+    .free-fox-header .free-fox-video #video-thumb {
+      background: url("/media/img/firefox/quantum/video-thumb.png") top 0 center no-repeat;
+      background-size: auto 100%;
+      display: block;
+      width: 420px;
+      height: 235px;
+      position: absolute;
+      top: -4px;
+      left: 0;
+      text-align: center;
+      transition: opacity .15s ease-in-out; }
+    .free-fox-header .free-fox-video #video-play {
+      background: url("/media/img/firefox/quantum/play.png") top 0 center no-repeat;
+      background-size: auto 100%;
+      display: block;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      opacity: 0.9; }
+      .free-fox-header .free-fox-video #video-play:hover {
+        opacity: 1.0; }
   .free-fox-header .footnote {
     display: block;
     text-align: right;

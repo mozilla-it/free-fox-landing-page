@@ -2,9 +2,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-//TODO: test redirection
-//TODO: test GA tracking
-//TODO: viedo
+//TODO: setup/test GTM tracking
 
 (function (Mozilla, Waypoint) {
     'use strict';
@@ -56,7 +54,74 @@
         });
     }
 
- 
+    function initVideoControls() {
+        var tag = document.createElement('script');
+        tag.id = 'video-control';
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        window.onYouTubeIframeAPIReady = function () {
+            window.player = new window.YT.Player('free-fox-embed-video', {
+                events: {
+                  'onReady': window.onPlayerReady,
+                  'onStateChange': window.onPlayerStateChange
+                }
+            });
+        };       
+        window.onPlayerReady = function(e) {
+            window.dataLayer.push({
+                event: 'play-video',
+                interaction: 'play',
+                status: 'ready'
+            });
+        };
+        window.onPlayerStateChange = function(e) {
+            if (e.data == 0) {
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'ended'
+                });
+            } else if (e.data == 1) {
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'playing'
+                });
+            } else if (e.data == 2) {
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'paused'
+                });
+            } 
+        };
+        var play = document.getElementById('video-play');
+        play.onclick = function (e) {
+            var thumb = document.getElementById('video-thumb');
+            thumb.style.opacity = '0.0';
+            thumb.style.pointerEvents = 'none';
+            window.player.playVideo();
+            window.dataLayer.push({
+                event: 'play-video',
+                interaction: 'play',
+                status: 'start'
+            });
+        }
+    }
+
+    function initDownloadTracking() {
+        $('.download-link').each(function() {
+            var $el = $(this);
+            $el.click(function() {
+                window.dataLayer.push({
+                    event: 'download-firefox',
+                    interaction: 'click',
+                    version: $el.attr('data-display-name')
+                });
+            });
+        });
+    }
 
     // Basic feature detect for 1st class JS features.
     if (cutsTheMustard()) {
@@ -72,6 +137,9 @@
         document.querySelector('main').className = 'supports-videos';
         initMediaQueries();
         initScrollTracking();
+        initVideoControls();
+        initDownloadTracking();
     }
 
 })(window.Mozilla, window.Waypoint);
+

@@ -133,8 +133,8 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
   <div id="outer-wrapper">
     
 <main role="main">
-  <header class="main-header" data-scroll-tracking="Main Header">
-    <div class="free-fox-header">
+  <header class="main-header">
+    <div class="free-fox-header" data-scroll-tracking="Free Fox Header">
       <div class="free-fox"></div>
       <div class="content">
         <div class="free-fox-content">
@@ -428,14 +428,17 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
  --></div>
         </div>
         <div class="free-fox-video">
-          <iframe src="https://www.youtube.com/embed/LtOGa5M8AuU?rel=0&amp;controls=0&amp;showinfo=0&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+          <iframe id="free-fox-embed-video" src="https://www.youtube.com/embed/LtOGa5M8AuU?rel=0&amp;controls=1&amp;showinfo=0&amp;modestbranding=1&amp;enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+          <div id="video-thumb">
+            <a id="video-play" href="javascript:void(0);"></a>
+          </div>
         </div>
       </div>
     </div>
     <div class="header-image">
       <img class="" src="/media/img/firefox/quantum/new-tab.png" srcset="/media/img/firefox/quantum/new-tab-high-res.png 1.5x" width="922" alt="" height="662">
     </div>
-    <div class="content">
+    <div class="content" data-scroll-tracking="Feature - Faster">
       <div class="header-content">
         <h1 class="with-logo">全新 <div class="wordmark inversed"></div></h1>
         <h2>卓越引擎 比舊版快一倍</h2>
@@ -443,23 +446,23 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
       </div>
     </div>
   </header>
-  <div class="key-features-section main" data-scroll-tracking="First Key Features">
+  <div class="key-features-section main">
     <div class="content">
-      <section class="key-feature fast">
+      <section class="key-feature fast" data-scroll-tracking="Feature - Block Tracking Ads">
         <div class="key-feature-content">
           <h2>阻擋追蹤廣告 瀏覽再加速 <span class="large">44</span>%</h2>
           <p>開啟隱私分頁，擋掉煩人追蹤廣告，<br>瀏覽速度再加快 44%，讓你上網更自在。</p>
           <a href="https://blog.mozilla.org/firefox/tracking-protection-study/" target="_blank">瞭解更多</a>
         </div>
       </section>
-      <section class="key-feature performance">
+      <section class="key-feature performance" data-scroll-tracking="Feature - Save Memory">
         <div class="key-feature-content">
           <h2>記憶體用量 節省 <span class="large">30</span>%</h2>
           <p>比 Chrome 節省 30% 的記憶體空間，<br>讓你的電腦效能不卡關。</p>
         </div>
       </section>
     </div>
-    <div class="free-fox-footer">
+    <div class="free-fox-footer" data-scroll-tracking="Free Fox Header">
       <div class="free-fox"></div>
       <div class="wordmark"></div>
       <p></p>
