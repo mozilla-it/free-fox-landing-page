@@ -510,7 +510,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /* -------------------------------------------------------------------------- */
 #outer-wrapper {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  font-size: 15px;
+  letter-spacing: 0.1em; }
 
 .button.photon,
 .button.photon:link,
@@ -558,45 +560,166 @@ h1, h2, h3, h4, h5, h6 {
     background: #2491ff;
     color: #fff; }
 
+#outer-wrapper ul.download-list strong {
+  font-weight: bold; }
+
+.main-header a.download-link,
+a.download-link,
+.main-header .download-link,
+.download-link {
+  background: url("/media/img/firefox/quantum/button.png") top 0 center no-repeat;
+  background-size: auto 100%;
+  display: inline-block;
+  width: 240px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  vertical-align: middle;
+  text-shadow: 1px 1px 2px black;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-decoration: none; }
+  .main-header a.download-link:hover, .main-header a.download-link:focus, .main-header a.download-link:active, .main-header a.download-link:visited:hover, .main-header a.download-link:visited:focus, .main-header a.download-link:visited:active,
+  a.download-link:hover,
+  a.download-link:focus,
+  a.download-link:active,
+  a.download-link:visited:hover,
+  a.download-link:visited:focus,
+  a.download-link:visited:active,
+  .main-header .download-link:hover,
+  .main-header .download-link:focus,
+  .main-header .download-link:active,
+  .main-header .download-link:visited:hover,
+  .main-header .download-link:visited:focus,
+  .main-header .download-link:visited:active,
+  .download-link:hover,
+  .download-link:focus,
+  .download-link:active,
+  .download-link:visited:hover,
+  .download-link:visited:focus,
+  .download-link:visited:active {
+    color: #FFFFFF;
+    text-decoration: none; }
+
+.wordmark {
+  background: url("/media/img/firefox/quantum/firefox-wordmark.png") top 0 center no-repeat;
+  background-size: auto 100%;
+  display: inline-block;
+  width: 300px;
+  height: 100px; }
+  .wordmark.inversed {
+    background: url("/media/img/firefox/quantum/firefox-wordmark-inversed.png") top 0 center no-repeat; }
+
+/* -------------------------------------------------------------------------- */
+.free-fox-header {
+  background: url("/media/img/firefox/quantum/header-bg.png") top -60px center no-repeat;
+  background-size: auto 100%;
+  display: block;
+  height: 750px;
+  margin-bottom: -60px;
+  text-align: center; }
+  .free-fox-header .free-fox-heading {
+    background: url("/media/img/firefox/quantum/free-fox-heading.png") top 0 center no-repeat;
+    background-size: auto 100%;
+    display: block;
+    width: 400px;
+    height: 90px; }
+  .free-fox-header .free-fox-content {
+    display: block;
+    float: left;
+    margin-left: 13%;
+    width: 40%;
+    margin-top: 120px; }
+    .free-fox-header .free-fox-content p {
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      padding: 20px 10px;
+      margin-top: 20px;
+      margin-bottom: 0;
+      text-align: left; }
+  .free-fox-header .free-fox-video {
+    display: block;
+    float: right;
+    margin-right: 5%;
+    margin-top: 120px;
+    width: 40%; }
+    .free-fox-header .free-fox-video iframe {
+      width: 400px;
+      height: 225px; }
+  .free-fox-header .footnote {
+    display: block;
+    text-align: right;
+    font-size: 9px;
+    margin-top: 6px;
+    margin-bottom: 20px; }
+  .free-fox-header .free-fox {
+    position: absolute;
+    margin: auto;
+    left: -100%;
+    right: -100%;
+    background: url("/media/img/firefox/quantum/fox-top.png") left 0 center no-repeat;
+    background-size: auto 100%;
+    display: block;
+    width: 1300px;
+    height: 360px;
+    pointer-events: none; }
+
+/* -------------------------------------------------------------------------- */
+.free-fox-footer {
+  background: url("/media/img/firefox/quantum/footer-bg.png") bottom 0 center no-repeat;
+  background-size: auto 50%;
+  display: block;
+  height: 550px;
+  text-align: center;
+  margin-top: -60px; }
+  .free-fox-footer .wordmark {
+    margin-top: 160px; }
+  .free-fox-footer .free-fox {
+    display: block;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    margin-top: 240px;
+    width: 800px;
+    pointer-events: none; }
+    .free-fox-footer .free-fox:before {
+      content: "";
+      float: right;
+      background: url("/media/img/firefox/quantum/fox-bottom.png") top 0 center no-repeat;
+      background-size: auto 100%;
+      width: 238px;
+      height: 88px;
+      transform: rotate(-24deg); }
+
 /* -------------------------------------------------------------------------- */
 .main-header {
   background: #0060df;
-  background: url("/media/img/firefox/quantum/fox-tail-header.png") top -60px center no-repeat, linear-gradient(148deg, #0060df 7%, #0479f4 20%, #0681fc 27%, #02bdf1 60%, #01d3f0 67%, #05f0e6 100%);
+  background: url("/media/img/firefox/quantum/fox-tail-header.png") bottom -40px center no-repeat, linear-gradient(148deg, #0060df 7%, #0479f4 20%, #0681fc 27%, #02bdf1 60%, #01d3f0 67%, #05f0e6 100%);
   color: #fff;
-  padding: 60px 0 50px;
+  padding: 0 0 50px;
   position: relative;
   z-index: 1; }
-  .main-header h1 {
+  .main-header h1.with-logo {
     background-image: url("/media/img/logos/firefox/logo-quantum.png");
     background-size: 189px 189px;
-    font-size: 24px;
-    font-size: 1.33333rem;
     background-position: top center;
     background-repeat: no-repeat;
-    padding-top: 210px; }
+    padding-top: 210px;
+    font-size: 36px; }
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
-      .main-header h1 {
+      .main-header h1.with-logo {
         background-image: url("/media/img/logos/firefox/logo-quantum-high-res.png");
         background-size: 189px 189px; } }
-    @media screen and (min-width: 760px) {
-      .main-header h1 {
-        font-size: 36px;
-        font-size: 2rem; } }
-    @media screen and (min-width: 1000px) {
-      .main-header h1 {
-        font-size: 48px;
-        font-size: 2.66667rem; } }
+    .main-header h1.with-logo .wordmark {
+      background-position: -20px 0;
+      background-size: 100% auto;
+      width: 240px;
+      height: 66px; }
   .main-header h2 {
-    font-size: 18px;
-    font-size: 1rem; }
-    @media screen and (min-width: 760px) {
-      .main-header h2 {
-        font-size: 24px;
-        font-size: 1.33333rem; } }
-    @media screen and (min-width: 1000px) {
-      .main-header h2 {
-        font-size: 36px;
-        font-size: 2rem; } }
+    font-size: 27px; }
   .main-header a:link,
   .main-header a:visited {
     color: #fff;
@@ -607,8 +730,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-decoration: underline; }
   .main-header p {
-    margin: 40px auto;
-    max-width: 24em; }
+    margin: 40px auto; }
   .main-header .cta-wrapper {
     display: inline-block;
     text-align: center; }
@@ -623,6 +745,12 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
     padding-bottom: 240px;
     text-align: center; }
+    .main-header .header-content h1 {
+      margin-left: 120px; }
+    .main-header .header-content h2 {
+      margin-left: 160px; }
+    .main-header .header-content p {
+      margin-left: 120px; }
   .main-header .header-image {
     z-index: 1; }
     .main-header .header-image img {
@@ -640,21 +768,21 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%; }
   @media screen and (min-width: 480px) {
     .main-header {
-      padding: 60px 0 40px; }
+      padding: 0 0 40px; }
       .main-header .header-content {
         -webkit-background-size: 400px 296px;
         background-size: 400px 296px;
         padding-bottom: 320px; } }
   @media screen and (min-width: 760px) {
     .main-header {
-      padding: 60px 0 30px; }
+      padding: 0 0 30px; }
       .main-header .header-content {
         -webkit-background-size: 500px 370px;
         background-size: 500px 370px;
         padding-bottom: 390px; } }
   @media screen and (min-width: 1000px) {
     .main-header {
-      padding: 60px 0; }
+      padding: 0 0; }
       .main-header h1 {
         background-position: top left; }
       .main-header p {
@@ -669,7 +797,6 @@ h1, h2, h3, h4, h5, h6 {
         width: 45%; }
       .main-header .header-image {
         float: right;
-        margin-top: 40px;
         width: 50%; }
         .main-header .header-image img {
           display: block;
@@ -678,7 +805,7 @@ h1, h2, h3, h4, h5, h6 {
           width: 922px; } }
   @media screen and (min-width: 1400px) {
     .main-header {
-      padding: 60px 0 30px; } }
+      padding: 0 0 30px; } }
 
 @media screen and (min-width: 1000px) {
   html[dir="rtl"] .main-header h1 {
@@ -690,6 +817,11 @@ h1, h2, h3, h4, h5, h6 {
     float: left; } }
 
 /* -------------------------------------------------------------------------- */
+.key-features-section .key-feature h2 {
+  font-size: 27px; }
+  .key-features-section .key-feature h2 .large {
+    font-size: 54px; }
+
 .key-features-section .key-feature.fast {
   background-image: url("/media/img/firefox/quantum/faster.png");
   background-size: 130px 141px;
@@ -801,451 +933,3 @@ h1, h2, h3, h4, h5, h6 {
     background-position: top left 60px; }
   html[dir="rtl"] .key-features-section .key-feature.mozilla {
     background-position: top right 60px; } }
-
-/* -------------------------------------------------------------------------- */
-.feature-carousel-container {
-  margin: 0 auto;
-  max-width: 700px;
-  position: relative; }
-  .feature-carousel-container p {
-    margin: 20px auto 40px;
-    max-width: 34em; }
-  .feature-carousel-container .feature-carousel-previous,
-  .feature-carousel-container .feature-carousel-next {
-    display: none; }
-  @media screen and (min-width: 1400px) {
-    .feature-carousel-container {
-      max-width: 850px; } }
-
-.supports-videos .feature-carousel-container .feature-carousel-previous,
-.supports-videos .feature-carousel-container .feature-carousel-next {
-  overflow: hidden;
-  text-indent: 120%;
-  white-space: nowrap;
-  -webkit-transition: background-color 0.1s ease-in-out;
-  transition: background-color 0.1s ease-in-out;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border-radius: 100%;
-  border: none;
-  display: none;
-  height: 74px;
-  position: absolute;
-  top: 30%;
-  width: 74px; }
-  .supports-videos .feature-carousel-container .feature-carousel-previous:hover, .supports-videos .feature-carousel-container .feature-carousel-previous:focus,
-  .supports-videos .feature-carousel-container .feature-carousel-next:hover,
-  .supports-videos .feature-carousel-container .feature-carousel-next:focus {
-    background-color: #f7f7f7; }
-
-.supports-videos .feature-carousel-container .feature-carousel-previous {
-  background-image: url("/media/img/firefox/quantum/carousel/arrow-left.png");
-  background-size: 74px 74px;
-  left: -110px; }
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
-    .supports-videos .feature-carousel-container .feature-carousel-previous {
-      background-image: url("/media/img/firefox/quantum/carousel/arrow-left-high-res.png");
-      background-size: 74px 74px; } }
-
-.supports-videos .feature-carousel-container .feature-carousel-next {
-  background-image: url("/media/img/firefox/quantum/carousel/arrow-right.png");
-  background-size: 74px 74px;
-  right: -110px; }
-  @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
-    .supports-videos .feature-carousel-container .feature-carousel-next {
-      background-image: url("/media/img/firefox/quantum/carousel/arrow-right-high-res.png");
-      background-size: 74px 74px; } }
-
-@media screen and (min-width: 1000px) {
-  .supports-videos .feature-carousel-container .feature-carousel-previous,
-  .supports-videos .feature-carousel-container .feature-carousel-next {
-    display: block; } }
-
-.feature-carousel {
-  margin: 0 auto;
-  overflow: hidden; }
-  .feature-carousel li {
-    width: 100%; }
-  .feature-carousel figure {
-    display: block;
-    margin: 0 auto 20px;
-    max-width: 850px;
-    text-align: center;
-    width: 100%; }
-  .feature-carousel figcaption {
-    color: #b1b1b3;
-    margin-top: 20px; }
-  .feature-carousel video {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    height: auto;
-    width: 100%; }
-
-@media screen and (min-width: 1000px) {
-  .supports-videos .feature-carousel li {
-    display: none; } }
-
-/* -------------------------------------------------------------------------- */
-.sticky-footer {
-  background: #fff;
-  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.2);
-  display: none;
-  text-align: center; }
-  .sticky-footer p {
-    font-size: 14px;
-    font-size: 0.77778rem;
-    display: inline-block;
-    line-height: 2.5;
-    margin: -4px 0 0;
-    padding-left: 55px;
-    position: relative; }
-    @media screen and (min-width: 760px) {
-      .sticky-footer p {
-        font-size: 16px;
-        font-size: 0.88889rem; } }
-    @media screen and (min-width: 1000px) {
-      .sticky-footer p {
-        font-size: 18px;
-        font-size: 1rem; } }
-    .sticky-footer p:before {
-      background-image: url("/media/img/logos/firefox/logo-quantum.png");
-      background-size: 45px 45px;
-      background-position: left center;
-      background-repeat: no-repeat;
-      content: '';
-      height: 45px;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 45px; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
-        .sticky-footer p:before {
-          background-image: url("/media/img/logos/firefox/logo-quantum-high-res.png");
-          background-size: 45px 45px; } }
-  .sticky-footer .button.photon-flat {
-    font-size: 14px;
-    font-size: 0.77778rem;
-    display: inline-block;
-    margin-left: .5em; }
-    @media screen and (min-width: 760px) {
-      .sticky-footer .button.photon-flat {
-        font-size: 16px;
-        font-size: 0.88889rem; } }
-  .sticky-footer.stuck {
-    bottom: 0;
-    left: 0;
-    position: fixed;
-    width: 100%;
-    z-index: 1000; }
-  @media screen and (min-width: 1000px) {
-    .sticky-footer {
-      display: block; } }
-  @media screen and (min-width: 1400px) {
-    .sticky-footer p {
-      font-size: 16px;
-      font-size: 0.88889rem;
-      padding-left: 70px; } }
-  @media screen and (min-width: 1400px) and (min-width: 760px) {
-    .sticky-footer p {
-      font-size: 18px;
-      font-size: 1rem; } }
-  @media screen and (min-width: 1400px) and (min-width: 1000px) {
-    .sticky-footer p {
-      font-size: 24px;
-      font-size: 1.33333rem; } }
-  @media screen and (min-width: 1400px) {
-      .sticky-footer p:before {
-        -webkit-background-size: 60px 60px;
-        background-size: 60px 60px;
-        height: 60px;
-        width: 60px; }
-    .sticky-footer .button.photon-flat {
-      font-size: 14px;
-      font-size: 0.77778rem; } }
-  @media screen and (min-width: 1400px) and (min-width: 760px) {
-    .sticky-footer .button.photon-flat {
-      font-size: 16px;
-      font-size: 0.88889rem; } }
-  @media screen and (min-width: 1400px) and (min-width: 1000px) {
-    .sticky-footer .button.photon-flat {
-      font-size: 18px;
-      font-size: 1rem; } }
-
-#colophon {
-  padding-bottom: 100px; }
-
-html[dir="rtl"] .sticky-footer p {
-  padding-left: 0;
-  padding-right: 55px; }
-  html[dir="rtl"] .sticky-footer p:before {
-    left: auto;
-    right: 0; }
-
-html[dir="rtl"] .sticky-footer .button.photon-flat {
-  margin-left: 0;
-  margin-right: .5em; }
-
-@media screen and (min-width: 1400px) {
-  html[dir="rtl"] .sticky-footer p {
-    padding-left: 0;
-    padding-right: 70px; } }
-
-/* -------------------------------------------------------------------------- */
-.other-features {
-  background: #0a84ff url("/media/img/firefox/quantum/fox-tail-features.png") top -160px center no-repeat;
-  color: #fff;
-  padding-bottom: 250px;
-  position: relative;
-  text-align: center; }
-  .other-features:after {
-    background: transparent url("/media/img/firefox/quantum/wave-middle.svg") top center no-repeat;
-    -webkit-background-size: 3821px 304px;
-    background-size: 3821px 304px;
-    bottom: -10px;
-    content: '';
-    display: block;
-    height: 304px;
-    left: 0;
-    position: absolute;
-    width: 100%; }
-  .other-features .content {
-    padding-top: 60px; }
-  .other-features h2 {
-    font-size: 18px;
-    font-size: 1rem;
-    margin-bottom: 60px;
-    padding-top: 40px;
-    position: relative; }
-    @media screen and (min-width: 760px) {
-      .other-features h2 {
-        font-size: 24px;
-        font-size: 1.33333rem; } }
-    @media screen and (min-width: 1000px) {
-      .other-features h2 {
-        font-size: 36px;
-        font-size: 2rem; } }
-    .other-features h2:before {
-      background: #fff;
-      border-radius: 5px;
-      content: '';
-      height: 5px;
-      left: 50%;
-      margin-left: -65px;
-      position: absolute;
-      top: 0;
-      width: 130px; }
-  .other-features ul {
-    margin: 0;
-    padding: 0; }
-    .other-features ul li {
-      margin: 0;
-      padding: 0; }
-  .other-features h3 {
-    font-size: 18px;
-    font-size: 1rem;
-    background-position: top center;
-    background-repeat: no-repeat;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding-top: 180px; }
-    .other-features h3.new-tab {
-      background-image: url("/media/img/firefox/quantum/features/new-tab.svg"); }
-    .other-features h3.library {
-      background-image: url("/media/img/firefox/quantum/features/library.svg"); }
-    .other-features h3.extensions {
-      background-image: url("/media/img/firefox/quantum/features/extensions.svg"); }
-    .other-features h3.mobile-browsing {
-      background-image: url("/media/img/firefox/quantum/features/mobile-browsing.svg"); }
-  @media screen and (min-width: 480px) {
-    .other-features ul {
-      display: flex;
-      flex-wrap: wrap; }
-      .other-features ul li {
-        margin: 0 auto;
-        width: 50%; }
-        .other-features ul li p {
-          padding: 0 20px 20px; } }
-  @media screen and (min-width: 1000px) {
-    .other-features {
-      padding: 60px 0 250px; }
-      .other-features ul li {
-        width: 25%; } }
-  @media screen and (min-width: 1400px) {
-    .other-features {
-      padding: 60px 0 280px; } }
-
-@supports (display: grid) {
-  @media screen and (min-width: 480px) {
-    .other-features ul {
-      display: grid;
-      grid-gap: 40px;
-      grid-template-columns: repeat(2, 1fr); }
-      .other-features ul li {
-        width: auto; }
-        .other-features ul li p {
-          padding: 0 0 20px; } }
-  @media screen and (min-width: 1000px) {
-    .other-features ul {
-      grid-template-columns: repeat(4, 1fr); }
-      .other-features ul li {
-        width: auto; } } }
-
-/* -------------------------------------------------------------------------- */
-.secondary-sign-up {
-  background: #0060df;
-  background: url("/media/img/firefox/quantum/fox-tail-sign-up.png") top -100px center no-repeat, linear-gradient(-80deg, #0060df 11%, #0080ff 45%, #00feff 82%, #06fde1 100%);
-  color: #fff;
-  padding-top: 390px;
-  position: relative; }
-  .secondary-sign-up:before {
-    background: transparent url("/media/img/firefox/quantum/wave-bottom.svg") top center no-repeat;
-    -webkit-background-size: 4615px 385px;
-    background-size: 4615px 385px;
-    content: '';
-    display: block;
-    height: 390px;
-    left: 0;
-    position: absolute;
-    top: -20px;
-    width: 100%; }
-  .secondary-sign-up h2 {
-    font-size: 18px;
-    font-size: 1rem;
-    line-height: 1.3;
-    margin: 20px auto;
-    max-width: 18em; }
-    @media screen and (min-width: 760px) {
-      .secondary-sign-up h2 {
-        font-size: 24px;
-        font-size: 1.33333rem; } }
-    @media screen and (min-width: 1000px) {
-      .secondary-sign-up h2 {
-        font-size: 36px;
-        font-size: 2rem; } }
-  .secondary-sign-up .secondary-sign-up-content {
-    margin: -140px 0 40px;
-    padding-top: 165px;
-    position: relative;
-    text-align: center; }
-    .secondary-sign-up .secondary-sign-up-content:before {
-      background-image: url("/media/img/firefox/quantum/laptop.png");
-      background-size: 280px 165px;
-      background-position: top left;
-      background-repeat: no-repeat;
-      content: '';
-      height: 165px;
-      left: 50%;
-      margin-left: -140px;
-      position: absolute;
-      top: 0;
-      width: 280px; }
-      @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), only screen and (min-resolution: 144dpi) {
-        .secondary-sign-up .secondary-sign-up-content:before {
-          background-image: url("/media/img/firefox/quantum/laptop-high-res.png");
-          background-size: 280px 165px; } }
-  @media screen and (min-width: 760px) {
-    .secondary-sign-up .secondary-sign-up-content {
-      margin-bottom: 0;
-      min-height: 180px;
-      padding: 0 0 0 320px;
-      text-align: left; }
-      .secondary-sign-up .secondary-sign-up-content h2 {
-        margin: 20px 0; }
-      .secondary-sign-up .secondary-sign-up-content:before {
-        left: 0;
-        margin-left: 0; } }
-  @media screen and (min-width: 1000px) {
-    .secondary-sign-up .secondary-sign-up-content {
-      min-height: 300px;
-      padding-left: 460px; }
-      .secondary-sign-up .secondary-sign-up-content:before {
-        -webkit-background-size: 422px 248px;
-        background-size: 422px 248px;
-        height: 248px;
-        width: 422px; } }
-
-@media screen and (min-width: 760px) {
-  html[dir="rtl"] .secondary-sign-up .secondary-sign-up-content {
-    padding: 0 320px 0 0;
-    text-align: right; }
-    html[dir="rtl"] .secondary-sign-up .secondary-sign-up-content:before {
-      left: auto;
-      right: 0; } }
-
-@media screen and (min-width: 1000px) {
-  html[dir="rtl"] .secondary-sign-up .secondary-sign-up-content {
-    padding-right: 460px; } }
-
-/* -------------------------------------------------------------------------- */
-.newsletter-modal .content {
-  background: #fff;
-  text-align: center; }
-
-.newsletter-modal .form-contents {
-  margin: 0 auto;
-  max-width: 260px; }
-
-.newsletter-modal .field-email input {
-  max-width: 100%; }
-
-.newsletter-modal .field {
-  margin-bottom: 20px; }
-
-.newsletter-modal .button.photon {
-  box-shadow: none;
-  margin: 10px auto 20px;
-  max-width: 260px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25); }
-  .newsletter-modal .button.photon:hover, .newsletter-modal .button.photon:focus {
-    box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.25); }
-
-.newsletter-modal h3 {
-  font-size: 16px;
-  font-size: 0.88889rem;
-  color: #0a84ff;
-  line-height: 1.4;
-  margin: 20px auto 40px;
-  max-width: 20em; }
-  @media screen and (min-width: 760px) {
-    .newsletter-modal h3 {
-      font-size: 18px;
-      font-size: 1rem; } }
-  @media screen and (min-width: 1000px) {
-    .newsletter-modal h3 {
-      font-size: 24px;
-      font-size: 1.33333rem; } }
-
-.newsletter-modal h4 {
-  font-size: 14px;
-  font-size: 0.77778rem;
-  margin-bottom: 40px; }
-  @media screen and (min-width: 760px) {
-    .newsletter-modal h4 {
-      font-size: 16px;
-      font-size: 0.88889rem; } }
-  @media screen and (min-width: 1000px) {
-    .newsletter-modal h4 {
-      font-size: 18px;
-      font-size: 1rem; } }
-
-.newsletter-modal select {
-  max-width: 100%; }
-
-#footer-email-errors {
-  color: #ff0000; }
-
-#newsletter-form-thankyou {
-  padding-top: 100px; }
-
-.js .newsletter-modal {
-  display: none; }
-
-#modal .newsletter-modal {
-  display: block; }
-  #modal .newsletter-modal .content {
-    min-width: 260px; }
-
-#modal .window .inner {
-  background: transparent;
-  max-width: 760px; }
-  #modal .window .inner .overlay-contents {
-    padding-top: 60px; }

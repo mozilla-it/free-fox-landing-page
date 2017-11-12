@@ -2,6 +2,10 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+//TODO: test redirection
+//TODO: test GA tracking
+//TODO: viedo
+
 (function (Mozilla, Waypoint) {
     'use strict';
 
@@ -56,6 +60,15 @@
 
     // Basic feature detect for 1st class JS features.
     if (cutsTheMustard()) {
+        if (client.isMobile) {
+            var url = new URL(window.location.href);
+            var c = url.searchParams.get("utm_content");
+            if (c) {
+                window.location = 'https://app.adjust.com/' + c;
+            } else {
+                window.location = 'https://app.adjust.com/b8vfki';
+            }
+        }
         document.querySelector('main').className = 'supports-videos';
         initMediaQueries();
         initScrollTracking();
