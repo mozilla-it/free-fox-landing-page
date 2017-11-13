@@ -2,7 +2,6 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-//TODO: setup/test GTM tracking
 
 (function (Mozilla, Waypoint) {
     'use strict';
@@ -110,19 +109,6 @@
         }
     }
 
-    function initDownloadTracking() {
-        $('.download-link').each(function() {
-            var $el = $(this);
-            $el.click(function() {
-                window.dataLayer.push({
-                    event: 'download-firefox',
-                    interaction: 'click',
-                    version: $el.attr('data-display-name')
-                });
-            });
-        });
-    }
-
     // Basic feature detect for 1st class JS features.
     if (cutsTheMustard()) {
         if (client.isMobile) {
@@ -138,7 +124,7 @@
         initMediaQueries();
         initScrollTracking();
         initVideoControls();
-        initDownloadTracking();
+        // initDownloadTracking();
     }
 
 })(window.Mozilla, window.Waypoint);
