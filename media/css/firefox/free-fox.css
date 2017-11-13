@@ -1,3 +1,4 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 @-webkit-keyframes pebbles-bounce-down {
   0%, 60%, 75%, 90%, 100% {
     -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -511,8 +512,11 @@ h1, h2, h3, h4, h5, h6 {
 /* -------------------------------------------------------------------------- */
 #outer-wrapper {
   overflow-x: hidden;
-  font-size: 15px;
-  letter-spacing: 0.1em; }
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  font-family: 'Noto Sans TC', 'Open Sans'; }
+  #outer-wrapper .light {
+    font-weight: lighter; }
 
 .button.photon,
 .button.photon:link,
@@ -614,55 +618,53 @@ a.download-link,
 
 /* -------------------------------------------------------------------------- */
 .free-fox-header {
-  background: url("/media/img/firefox/quantum/header-bg.png") top -60px center no-repeat;
+  background-image: url("/media/img/firefox/quantum/header-bg.png");
+  background-repeat: no-repeat;
   background-size: auto 100%;
   display: block;
   height: 750px;
-  margin-bottom: -60px;
-  text-align: center; }
+  margin-bottom: -60px; }
+  .free-fox-header .content {
+    text-align: center;
+    direction: rtl; }
   .free-fox-header .free-fox-heading {
     background: url("/media/img/firefox/quantum/free-fox-heading.png") top 0 center no-repeat;
-    background-size: auto 100%;
+    background-size: 100% auto;
     display: block;
     width: 400px;
-    height: 90px; }
+    height: 90px;
+    vertical-align: top; }
   .free-fox-header .free-fox-content {
-    display: block;
-    float: left;
-    margin-left: 13%;
-    width: 40%;
-    margin-top: 120px; }
+    display: inline-block;
+    width: 400px;
+    vertical-align: top; }
     .free-fox-header .free-fox-content p {
       border-top: 2px solid white;
       border-bottom: 2px solid white;
       padding: 20px 10px;
       margin-top: 20px;
       margin-bottom: 0;
+      margin-left: 5px;
+      margin-right: 5px;
       text-align: left; }
+      .free-fox-header .free-fox-content p span {
+        white-space: nowrap; }
   .free-fox-header .free-fox-video {
-    position: relative;
-    display: block;
-    float: right;
-    margin-right: 5%;
-    margin-top: 120px;
-    width: 40%; }
-    .free-fox-header .free-fox-video iframe {
-      width: 400px;
-      height: 225px; }
+    display: inline-block;
+    width: 400px; }
     .free-fox-header .free-fox-video #video-thumb {
+      position: relative;
       background: url("/media/img/firefox/quantum/video-thumb.png") top 0 center no-repeat;
-      background-size: auto 100%;
+      background-size: 100% auto;
       display: block;
-      width: 420px;
-      height: 235px;
-      position: absolute;
-      top: -4px;
-      left: 0;
+      width: 400px;
+      height: 225px;
       text-align: center;
-      transition: opacity .15s ease-in-out; }
+      -webkit-transition: opacity 0.15s ease-in-out;
+      transition: opacity 0.15s ease-in-out; }
     .free-fox-header .free-fox-video #video-play {
       background: url("/media/img/firefox/quantum/play.png") top 0 center no-repeat;
-      background-size: auto 100%;
+      background-size: 100% auto;
       display: block;
       width: 80px;
       height: 80px;
@@ -680,7 +682,8 @@ a.download-link,
     text-align: right;
     font-size: 9px;
     margin-top: 6px;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    font-weight: lighter; }
   .free-fox-header .free-fox {
     position: absolute;
     margin: auto;
@@ -692,6 +695,39 @@ a.download-link,
     width: 1300px;
     height: 360px;
     pointer-events: none; }
+  @media screen and (max-width: 480px) {
+    .free-fox-header {
+      background-position: top 0 center; }
+      .free-fox-header .content {
+        padding: 10px; }
+      .free-fox-header .free-fox-heading {
+        width: 300px;
+        height: 68px; }
+      .free-fox-header .free-fox-content {
+        width: 300px; }
+      .free-fox-header .free-fox-video {
+        width: 300px;
+        height: 169px; }
+        .free-fox-header .free-fox-video #video-thumb {
+          width: 300px;
+          height: 169px; } }
+  @media screen and (min-width: 480px) {
+    .free-fox-header {
+      background-position: top 0 center; } }
+  @media screen and (min-width: 760px) {
+    .free-fox-header .content {
+      padding: 20px 100px; } }
+  @media screen and (min-width: 1000px) {
+    .free-fox-header {
+      background-position: top -60px center; }
+      .free-fox-header .content {
+        padding: 20px 45px; }
+      .free-fox-header .free-fox-content {
+        margin-top: 160px;
+        margin-left: 80px; }
+      .free-fox-header .free-fox-video {
+        margin-top: 150px;
+        margin-left: 20px; } }
 
 /* -------------------------------------------------------------------------- */
 .free-fox-footer {
@@ -722,6 +758,29 @@ a.download-link,
       transform: rotate(-24deg); }
 
 /* -------------------------------------------------------------------------- */
+#video-modal {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0.0;
+  pointer-events: none;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out; }
+  #video-modal iframe {
+    position: absolute;
+    margin: auto;
+    top: -100%;
+    left: -100%;
+    bottom: -100%;
+    right: -100%;
+    box-shadow: 5px 5px 15px #000000; }
+
+/* -------------------------------------------------------------------------- */
 .main-header {
   background: #0060df;
   background: url("/media/img/firefox/quantum/fox-tail-header.png") bottom -40px center no-repeat, linear-gradient(148deg, #0060df 7%, #0479f4 20%, #0681fc 27%, #02bdf1 60%, #01d3f0 67%, #05f0e6 100%);
@@ -742,9 +801,10 @@ a.download-link,
         background-size: 189px 189px; } }
     .main-header h1.with-logo .wordmark {
       background-position: -20px 0;
-      background-size: 100% auto;
-      width: 240px;
-      height: 66px; }
+      background-size: 120% auto;
+      width: 200px;
+      height: 72px;
+      vertical-align: bottom; }
   .main-header h2 {
     font-size: 27px; }
   .main-header a:link,
@@ -772,12 +832,13 @@ a.download-link,
     background-repeat: no-repeat;
     padding-bottom: 240px;
     text-align: center; }
-    .main-header .header-content h1 {
-      margin-left: 120px; }
     .main-header .header-content h2 {
-      margin-left: 160px; }
+      margin-left: 40px; }
     .main-header .header-content p {
-      margin-left: 120px; }
+      margin-top: 20px;
+      margin-right: 20px;
+      padding-top: 20px;
+      border-top: 2px solid #FFFFFF; }
   .main-header .header-image {
     z-index: 1; }
     .main-header .header-image img {
@@ -793,6 +854,11 @@ a.download-link,
     left: 0;
     position: absolute;
     width: 100%; }
+  @media screen and (max-width: 480px) {
+    .main-header .header-content h2 {
+      margin-left: 0; }
+      .main-header .header-content h2 span {
+        white-space: nowrap; } }
   @media screen and (min-width: 480px) {
     .main-header {
       padding: 0 0 40px; }
@@ -815,13 +881,15 @@ a.download-link,
       .main-header p {
         margin: 40px 0; }
       .main-header .content {
-        z-index: 2; }
+        z-index: 2;
+        padding: 20px 0; }
       .main-header .header-content {
         background: none;
-        float: left;
+        float: right;
+        margin-right: 60px;
         padding-bottom: 0;
         text-align: left;
-        width: 45%; }
+        width: 400px; }
       .main-header .header-image {
         float: right;
         width: 50%; }

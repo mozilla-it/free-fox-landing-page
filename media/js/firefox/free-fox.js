@@ -37,7 +37,6 @@
         }
     }
 
-    // Only init video carousel for wide viewports on desktop browsers.
     function initMediaQueries() {
         var desktopWidth;
 
@@ -54,62 +53,133 @@
     }
 
     function initVideoControls() {
-        var tag = document.createElement('script');
-        tag.id = 'video-control';
-        tag.src = 'https://www.youtube.com/iframe_api';
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        window.onYouTubeIframeAPIReady = function () {
-            window.player = new window.YT.Player('free-fox-embed-video', {
-                events: {
-                  'onReady': window.onPlayerReady,
-                  'onStateChange': window.onPlayerStateChange
-                }
-            });
-        };       
-        window.onPlayerReady = function(e) {
-            window.dataLayer.push({
-                event: 'play-video',
-                interaction: 'play',
-                status: 'ready'
-            });
-        };
-        window.onPlayerStateChange = function(e) {
-            if (e.data == 0) {
+        var iframe = document.getElementById('free-fox-youtube');
+        if (iframe) {
+            var tag = document.createElement('script');
+            tag.id = 'video-control';
+            tag.src = 'https://www.youtube.com/iframe_api';
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            window.onYouTubeIframeAPIReady = function () {
+                window.player = new window.YT.Player('free-fox-youtube', {
+                    events: {
+                      'onReady': window.onPlayerReady,
+                      'onStateChange': window.onPlayerStateChange
+                    }
+                });
+            };       
+            window.onPlayerReady = function(e) {
                 window.dataLayer.push({
                     event: 'play-video',
                     interaction: 'play',
-                    status: 'ended'
+                    status: 'ready'
                 });
-            } else if (e.data == 1) {
+            };
+            window.onPlayerStateChange = function(e) {
+                if (e.data == 0) {
+                    window.dataLayer.push({
+                        event: 'play-video',
+                        interaction: 'play',
+                        status: 'ended'
+                    });
+                    closeModal();
+                } else if (e.data == 1) {
+                    window.dataLayer.push({
+                        event: 'play-video',
+                        interaction: 'play',
+                        status: 'playing'
+                    });
+                } else if (e.data == 2) {
+                    window.dataLayer.push({
+                        event: 'play-video',
+                        interaction: 'play',
+                        status: 'paused'
+                    });
+                } 
+            };
+            var modal = document.getElementById('video-modal');
+            var play = document.getElementById('video-play');
+            function closeModal(e) {
+                window.player.pauseVideo();
+                window.player.seekTo(0.0);
+                modal.style.opacity = '0.0';
+                modal.style.pointerEvents = 'none';
+            };
+            modal.onclick = function() {
+                closeModal();
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'closed'
+                });
+            }
+            play.onclick = function (e) {
+                modal.style.opacity = '1.0';
+                modal.style.pointerEvents = 'all';
+                window.player.playVideo();
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'start'
+                });
+            };
+        }
+        iframe = document.getElementById('free-fox-vimeo');
+        if (iframe) {
+            var player = new Vimeo.Player(iframe);
+            var play = document.getElementById('video-play');
+            var modal = document.getElementById('video-modal');
+            play.onclick = function (e) {
+                modal.style.opacity = '1.0';
+                modal.style.pointerEvents = 'all';
+                player.play();
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'start'
+                });
+            };
+            function closeModal(e) {
+                player.pause().then(function() {
+                    player.setCurrentTime(0.0);
+                    modal.style.opacity = '0.0';
+                    modal.style.pointerEvents = 'none';
+                });
+            };
+            modal.onclick = function() {
+                closeModal();
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'closed'
+                });
+            }
+            player.on('play', function() {
                 window.dataLayer.push({
                     event: 'play-video',
                     interaction: 'play',
                     status: 'playing'
                 });
-            } else if (e.data == 2) {
+            });
+            player.on('pause', function() {
                 window.dataLayer.push({
                     event: 'play-video',
                     interaction: 'play',
                     status: 'paused'
                 });
-            } 
-        };
-        var play = document.getElementById('video-play');
-        play.onclick = function (e) {
-            var thumb = document.getElementById('video-thumb');
-            thumb.style.opacity = '0.0';
-            thumb.style.pointerEvents = 'none';
-            window.player.playVideo();
-            window.dataLayer.push({
-                event: 'play-video',
-                interaction: 'play',
-                status: 'start'
+            });
+            player.on('ended', function() {
+                closeModal();
+                window.dataLayer.push({
+                    event: 'play-video',
+                    interaction: 'play',
+                    status: 'ended'
+                });
             });
         }
+    
     }
 
-    // Basic feature detect for 1st class JS features.
     if (cutsTheMustard()) {
         if (client.isMobile) {
             var url = new URL(window.location.href);
@@ -124,7 +194,6 @@
         initMediaQueries();
         initScrollTracking();
         initVideoControls();
-        // initDownloadTracking();
     }
 
 })(window.Mozilla, window.Waypoint);

@@ -137,10 +137,15 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
     <div class="free-fox-header" data-scroll-tracking="Free Fox Header">
       <div class="free-fox"></div>
       <div class="content">
+        <div class="free-fox-video">
+          <div id="video-thumb">
+            <a id="video-play" href="javascript:void(0);"></a>
+          </div>
+        </div>
         <div class="free-fox-content">
           <div class="free-fox-heading"></div>
-          <p>開啟隱私分頁，擋掉追蹤廣告，瀏覽速度再加快 44%*<br>
-          上網不再被追蹤、限制或拖累，瀏覽世界更自由自在</p>
+          <p>開啟隱私分頁，擋掉追蹤廣告，<span>瀏覽速度再加快 44%*</span><br>
+          上網不再被追蹤、限制或拖累，<span>瀏覽世界更自由自在</span></p>
           <span class="footnote">*本數據僅為電腦版呈現</span>
           
 
@@ -427,12 +432,6 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
   </small>
  --></div>
         </div>
-        <div class="free-fox-video">
-          <iframe id="free-fox-embed-video" src="https://www.youtube.com/embed/LtOGa5M8AuU?rel=0&amp;controls=1&amp;showinfo=0&amp;modestbranding=1&amp;enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-          <div id="video-thumb">
-            <a id="video-play" href="javascript:void(0);"></a>
-          </div>
-        </div>
       </div>
     </div>
     <div class="header-image">
@@ -441,8 +440,8 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
     <div class="content" data-scroll-tracking="Feature - Faster">
       <div class="header-content">
         <h1 class="with-logo">全新 <div class="wordmark inversed"></div></h1>
-        <h2>卓越引擎 比舊版快一倍</h2>
-        <p>新版 Firefox 的卓越引擎，創造出比舊版快一倍的超速運轉效能，讓你飆速上網無所限制。</p>
+        <h2>卓越引擎 <span>比舊版快一倍</span></h2>
+        <p class="light">新版 Firefox 的卓越引擎，創造出比舊版快一倍的超速運轉效能，讓你飆速上網無所限制。</p>
       </div>
     </div>
   </header>
@@ -451,14 +450,14 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
       <section class="key-feature fast" data-scroll-tracking="Feature - Block Tracking Ads">
         <div class="key-feature-content">
           <h2>阻擋追蹤廣告 瀏覽再加速 <span class="large">44</span>%</h2>
-          <p>開啟隱私分頁，擋掉煩人追蹤廣告，<br>瀏覽速度再加快 44%，讓你上網更自在。</p>
+          <p class="light">開啟隱私分頁，擋掉煩人追蹤廣告，<br>瀏覽速度再加快 44%，讓你上網更自在。</p>
           <a href="https://blog.mozilla.org/firefox/tracking-protection-study/" target="_blank">瞭解更多</a>
         </div>
       </section>
       <section class="key-feature performance" data-scroll-tracking="Feature - Save Memory">
         <div class="key-feature-content">
           <h2>記憶體用量 節省 <span class="large">30</span>%</h2>
-          <p>比 Chrome 節省 30% 的記憶體空間，<br>讓你的電腦效能不卡關。</p>
+          <p class="light">比 Chrome 節省 30% 的記憶體空間，<br>讓你的電腦效能不卡關。</p>
         </div>
       </section>
     </div>
@@ -758,6 +757,13 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=1122305#c8
 
 
     
+<div id="video-modal">
+
+<iframe id="free-fox-vimeo" src="https://player.vimeo.com/video/113526466?title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<script src="/media/js/libs/vimeo-player.js" type="text/javascript" charset="utf-8"></script>
+
+</div>
+
   </div>
 
   <!--[if IE 9]>
