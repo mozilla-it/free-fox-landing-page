@@ -687,6 +687,7 @@ a.download-link,
   .free-fox-header .free-fox {
     position: absolute;
     margin: auto;
+    top: -20px;
     left: -100%;
     right: -100%;
     background: url("/media/img/firefox/quantum/fox-top.png") left 0 center no-repeat;
@@ -719,14 +720,14 @@ a.download-link,
       padding: 20px 100px; } }
   @media screen and (min-width: 1000px) {
     .free-fox-header {
-      background-position: top -60px center; }
+      background-position: top -40px center; }
       .free-fox-header .content {
         padding: 20px 45px; }
       .free-fox-header .free-fox-content {
-        margin-top: 160px;
+        margin-top: 140px;
         margin-left: 80px; }
       .free-fox-header .free-fox-video {
-        margin-top: 150px;
+        margin-top: 130px;
         margin-left: 20px; } }
 
 /* -------------------------------------------------------------------------- */
