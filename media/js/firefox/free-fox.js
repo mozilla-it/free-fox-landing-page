@@ -181,14 +181,16 @@
     }
 
     if (cutsTheMustard()) {
-        if (client.isMobile) {
+        if (/^(android|ios)$/.test(client.platform)) {
             var url = new URL(window.location.href);
-            var c = url.searchParams.get("utm_content");
+            var c = url.searchParams.get('utm_content');
+            var redirect = 'https://app.adjust.com/b8vfki';
             if (c) {
-                window.location = 'https://app.adjust.com/' + c;
-            } else {
-                window.location = 'https://app.adjust.com/b8vfki';
+                redirect = 'https://app.adjust.com/' + c;
             }
+            var fallbackLink = document.getElementById('fallback-link');
+            fallbackLink.href = redirect;
+            window.location = redirect;
         }
         document.querySelector('main').className = 'supports-videos';
         initMediaQueries();
