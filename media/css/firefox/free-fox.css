@@ -623,7 +623,7 @@ a.download-link,
   background-size: auto 100%;
   display: block;
   height: 750px;
-  margin-bottom: -60px; }
+  margin-bottom: -80px; }
   .free-fox-header .content {
     text-align: center;
     direction: rtl; }
@@ -722,19 +722,19 @@ a.download-link,
       padding: 20px 100px; } }
   @media screen and (min-width: 1000px) {
     .free-fox-header {
-      background-position: top -40px center; }
+      background-position: top -60px center; }
       .free-fox-header .content {
         padding: 20px 45px; }
       .free-fox-header .free-fox-content {
-        margin-top: 140px;
+        margin-top: 120px;
         margin-left: 80px; }
       .free-fox-header .free-fox-video {
-        margin-top: 130px;
+        margin-top: 110px;
         margin-left: 20px; } }
 
 /* -------------------------------------------------------------------------- */
 .free-fox-footer {
-  background: url("/media/img/firefox/quantum/footer-bg.png") bottom 0 center no-repeat, url("/media/img/firefox/quantum/footer-bg.png") bottom 0 left repeat-x;
+  background: url("/media/img/firefox/quantum/footer-bg.png") bottom 0 center no-repeat;
   background-size: auto 50%;
   display: block;
   height: 550px;
@@ -919,6 +919,8 @@ a.download-link,
   font-size: 27px; }
   .key-features-section .key-feature h2 .large {
     font-size: 54px; }
+  .key-features-section .key-feature h2 span {
+    white-space: nowrap; }
 
 .key-features-section .key-feature.fast {
   background-image: url("/media/img/firefox/quantum/faster.png");
