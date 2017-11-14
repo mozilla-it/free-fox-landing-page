@@ -637,7 +637,8 @@ a.download-link,
   .free-fox-header .free-fox-content {
     display: inline-block;
     width: 400px;
-    vertical-align: top; }
+    vertical-align: top;
+    direction: ltr; }
     .free-fox-header .free-fox-content p {
       border-top: 2px solid white;
       border-bottom: 2px solid white;
@@ -651,7 +652,8 @@ a.download-link,
         white-space: nowrap; }
   .free-fox-header .free-fox-video {
     display: inline-block;
-    width: 400px; }
+    width: 400px;
+    direction: ltr; }
     .free-fox-header .free-fox-video #video-thumb {
       position: relative;
       background: url("/media/img/firefox/quantum/video-thumb.png") top 0 center no-repeat;
@@ -732,7 +734,7 @@ a.download-link,
 
 /* -------------------------------------------------------------------------- */
 .free-fox-footer {
-  background: url("/media/img/firefox/quantum/footer-bg.png") bottom 0 center no-repeat;
+  background: url("/media/img/firefox/quantum/footer-bg.png") bottom 0 center no-repeat, url("/media/img/firefox/quantum/footer-bg.png") bottom 0 left repeat-x;
   background-size: auto 50%;
   display: block;
   height: 550px;
