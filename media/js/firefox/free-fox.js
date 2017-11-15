@@ -97,6 +97,24 @@
                     });
                 } 
             };
+            document.addEventListener('keydown', function(e) {
+                var evt = e || window.event;
+                var isEscape = false;
+                if ("key" in evt) {
+                    isEscape = (evt.key == "Escape" || evt.key == "Esc");
+                } else {
+                    isEscape = (evt.keyCode == 27);
+                }
+                if (isEscape) {
+                    window.dataLayer.push({
+                        event: 'play-video',
+                        interaction: 'play',
+                        status: 'closed'
+                    });
+                    closeModal();
+                }
+            });
+            $('.close-button').click(closeModal);
             var modal = document.getElementById('video-modal');
             var play = document.getElementById('video-play');
             function closeModal(e) {
@@ -106,12 +124,12 @@
                 modal.style.pointerEvents = 'none';
             };
             modal.onclick = function() {
-                closeModal();
                 window.dataLayer.push({
                     event: 'play-video',
                     interaction: 'play',
                     status: 'closed'
                 });
+                closeModal();
             }
             play.onclick = function (e) {
                 modal.style.opacity = '1.0';
@@ -139,6 +157,24 @@
                     status: 'start'
                 });
             };
+            document.addEventListener('keydown', function(e) {
+                var evt = e || window.event;
+                var isEscape = false;
+                if ("key" in evt) {
+                    isEscape = (evt.key == "Escape" || evt.key == "Esc");
+                } else {
+                    isEscape = (evt.keyCode == 27);
+                }
+                if (isEscape) {
+                    window.dataLayer.push({
+                        event: 'play-video',
+                        interaction: 'play',
+                        status: 'closed'
+                    });
+                    closeModal();
+                }
+            });
+            $('.close-button').click(closeModal);
             function closeModal(e) {
                 player.pause().then(function() {
                     player.setCurrentTime(0.0);
