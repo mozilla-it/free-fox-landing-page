@@ -669,14 +669,14 @@ a.download-link,
     background-size: 100% auto;
     display: block;
     width: 400px;
-    height: 90px;
+    height: 93px;
     vertical-align: top; }
   .free-fox-header .free-fox-content {
     display: inline-block;
     width: 400px;
     vertical-align: top;
     direction: ltr; }
-    .free-fox-header .free-fox-content p {
+    .free-fox-header .free-fox-content > p {
       border-top: 2px solid white;
       border-bottom: 2px solid white;
       padding: 20px 10px;
@@ -685,7 +685,7 @@ a.download-link,
       margin-left: 5px;
       margin-right: 5px;
       text-align: left; }
-      .free-fox-header .free-fox-content p span {
+      .free-fox-header .free-fox-content > p span {
         white-space: nowrap; }
   .free-fox-header .free-fox-video {
     display: inline-block;
@@ -742,9 +742,12 @@ a.download-link,
         padding: 10px; }
       .free-fox-header .free-fox-heading {
         width: 300px;
-        height: 68px; }
+        height: 70px; }
       .free-fox-header .free-fox-content {
         width: 300px; }
+        .free-fox-header .free-fox-content > p {
+          display: flex;
+          flex-direction: column; }
       .free-fox-header .free-fox-video {
         width: 300px;
         height: 169px; }
