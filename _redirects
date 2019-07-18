@@ -1,0 +1,15 @@
+# Aliases
+/free-fox		/	200
+/firefox		/	200
+
+# Home redirect
+/			/zh-TW/	301
+
+# Product
+/firefox/*/firstrun	https://www.mozilla.org/:splat	301
+/firefox/*/whatsnew	https://www.mozilla.org/:splat	301
+/firefox/*/tour		https://www.mozilla.org/:splat	301
+
+# External rediredts
+/community		https://www.mozilla.org/zh-TW/contribute	301
+/about			https://www.mozilla.org/zh-TW/about		301
