@@ -3,7 +3,7 @@
 /firefox		/	200
 
 # Home redirect
-/			/zh-TW/	301
+/			https://www.mozilla.org/zh-TW/	301
 
 # Product
 /firefox/*/firstrun	https://www.mozilla.org/:splat	301
